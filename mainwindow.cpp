@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
+#include "dbconnect.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -24,7 +25,12 @@ void MainWindow::on_findButton_clicked()
 
 void MainWindow::loadTextFile()
 {
-    QFile inputFile(":/input.txt");
+    createConnection();
+    QString file = getTextFromQuery();
+    closeConnection();
+    QString str = ":/";
+    str += file.simplified();
+    QFile inputFile(str);
     inputFile.open(QIODevice::ReadOnly);
     QTextStream in(&inputFile);
     QString line = in.readAll();
