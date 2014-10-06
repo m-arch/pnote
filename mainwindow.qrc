@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>input.txt</file>
+        <file>db-setup/setup.sql</file>
     </qresource>
 </RCC>
