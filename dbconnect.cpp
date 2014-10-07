@@ -14,17 +14,17 @@ bool createConnection()
     return true;
 }
 
-QString getTextFromQuery()
-{
-    QSqlQuery query;
-    QString textFile;
-    query.exec("SELECT location FROM files;");
-    while (query.next()){
-        textFile = query.value(0).toString();
+//QString getTextFromQuery()
+//{
+//    QSqlQuery query;
+//    QString textFile;
+//    query.exec("SELECT location FROM files;");
+//    while (query.next()){
+//        textFile = query.value(0).toString();
 
-    }
-    return textFile;
-}
+//    }
+//    return textFile;
+//}
 
 bool closeConnection()
 {
