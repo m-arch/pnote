@@ -14,12 +14,22 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dbconnect.cpp
+    dbconnect.cpp \
+    dbsetup.cpp \
+    utilities.cpp \
+    menuwindow.cpp \
+    notewindow.cpp
 
 HEADERS  += mainwindow.h \
-    dbconnect.h
+    dbconnect.h \
+    dbsetup.h \
+    utilities.h \
+    menuwindow.h \
+    notewindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    menuwindow.ui \
+    notewindow.ui
 
 OTHER_FILES +=
 

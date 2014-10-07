@@ -7,5 +7,5 @@
 
 bool createConnection();
 bool closeConnection();
-QString getTextFromQuery();
+//QString getTextFromQuery();
 #endif // DBCONNECT_H
