@@ -15,6 +15,13 @@ public:
     explicit NoteWindow(QWidget *parent = 0);
     ~NoteWindow();
 
+private slots:
+    void on_browseButton_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_CancelButton_clicked();
+
 private:
     Ui::NoteWindow *ui;
 };

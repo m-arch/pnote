@@ -5,6 +5,7 @@
 #include "utilities.h"
 #include <QFileDialog>
 #include <QtSql>
+#include "menuwindow.h"
 
 using namespace std;
 
@@ -23,13 +24,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_browseButton_clicked()
-{
-    //do not forget to save home location as a global variable that depends on the os arch
-    QString fileName = QFileDialog::getOpenFileName(this,
-            tr("Open Image"), "/home/marc", tr("Image Files (*.png *.jpg *.bmp)"));
-    ui->fileLocation->setProperty("text", fileName);
-}
+
 
 void MainWindow::loadTextFile()
 {
@@ -48,19 +43,16 @@ void MainWindow::loadTextFile()
 void MainWindow::on_SaveButton_clicked()
 {
     createConnection();
-    utilities util;
     QString queryStr;
     char* ID = new char[64];
     QSqlQuery query ;
+    utilities util;
 
     if (checkFormFields() == true)
     {
 
         util.generateString(ID, 64);
         QString idValue = QString::fromStdString(ID);
-        QString imagePath = ui->fileLocation->text();
-        if (imagePath != "")
-            std::string savedImagePath = util.saveImage(imagePath);
         queryStr = "INSERT INTO pnote.user (ID, First_Name, Last_Name, Contact_Number, Other_Contact) VALUES ('"
                         + idValue + "', '"
                         + ui->FirstName->text() + "', '"
@@ -77,4 +69,11 @@ void MainWindow::on_SaveButton_clicked()
 bool MainWindow::checkFormFields()
 {
     return true;
+}
+
+void MainWindow::on_CancelButton_clicked()
+{
+    this->hide();
+    MenuWindow *mw = new MenuWindow(this);
+    mw->show();
 }

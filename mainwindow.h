@@ -16,9 +16,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_browseButton_clicked();
-
     void on_SaveButton_clicked();
+
+    void on_CancelButton_clicked();
 
 private:
     Ui::MainWindow *ui;
