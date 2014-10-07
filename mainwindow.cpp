@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    dbSetup();
+    //dbSetup();   //uncomment when created the check if schema already available
     ui->setupUi(this);
     loadTextFile();
 }
@@ -47,27 +47,31 @@ void MainWindow::loadTextFile()
 
 void MainWindow::on_SaveButton_clicked()
 {
+    createConnection();
+    utilities util;
+    QString queryStr;
+    char* ID = new char[64];
+    QSqlQuery query ;
+
     if (checkFormFields() == true)
     {
-        utilities util;
-        QString queryString;
-        char* ID = new char[64];
-        QSqlQuery query ;
+
         util.generateString(ID, 64);
         QString idValue = QString::fromStdString(ID);
         QString imagePath = ui->fileLocation->text();
         if (imagePath != "")
             std::string savedImagePath = util.saveImage(imagePath);
-        queryString = "INSERT INTO pnote.user (ID, First_Name, Last_Name, Contact_Number, Other_Contact) VALUES ('"
+        queryStr = "INSERT INTO pnote.user (ID, First_Name, Last_Name, Contact_Number, Other_Contact) VALUES ('"
                         + idValue + "', '"
                         + ui->FirstName->text() + "', '"
                         + ui->LastName->text() + "', '"
                         + ui->Phone->text() + "', '"
                         + ui->OtherContact->text() + "');";
-        createConnection();
-        query.exec(queryString);
-        closeConnection();
+        qDebug() << queryStr;
+        query.exec(queryStr);
     }
+    closeConnection();
+
 }
 
 bool MainWindow::checkFormFields()
