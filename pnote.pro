@@ -18,18 +18,27 @@ SOURCES += main.cpp\
     dbsetup.cpp \
     utilities.cpp \
     menuwindow.cpp \
-    notewindow.cpp
+    notewindow.cpp \
+    userswindow.cpp \
+    user.cpp \
+    usercar.cpp \
+    initialize.cpp
 
 HEADERS  += mainwindow.h \
     dbconnect.h \
     dbsetup.h \
     utilities.h \
     menuwindow.h \
-    notewindow.h
+    notewindow.h \
+    userswindow.h \
+    user.h \
+    usercar.h \
+    initialize.h
 
 FORMS    += mainwindow.ui \
     menuwindow.ui \
-    notewindow.ui
+    notewindow.ui \
+    userswindow.ui
 
 OTHER_FILES +=
 

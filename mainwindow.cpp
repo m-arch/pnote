@@ -6,6 +6,7 @@
 #include <QFileDialog>
 #include <QtSql>
 #include "menuwindow.h"
+#include "initialize.h"
 
 using namespace std;
 
@@ -47,7 +48,7 @@ void MainWindow::on_SaveButton_clicked()
     char* ID = new char[64];
     QSqlQuery query ;
     utilities util;
-
+    std::tr1::unordered_map<string, User> usersHash = initialize::Instance()->getUsersHash();
     if (checkFormFields() == true)
     {
 

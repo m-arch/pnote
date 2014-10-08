@@ -21,6 +21,8 @@ private slots:
 
     void on_addNoteButton_clicked();
 
+    void on_showUsersButton_clicked();
+
 private:
     Ui::MenuWindow *ui;
     //Ui::MainWindow *mainWin;
