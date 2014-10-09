@@ -1,12 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "dbsetup.h"
-#include "dbconnect.h"
-#include "utilities.h"
+#include "../logic/dbsetup.h"
+#include "../dbconnect.h"
+#include "../logic/utilities.h"
 #include <QFileDialog>
 #include <QtSql>
 #include "menuwindow.h"
-#include "initialize.h"
+#include "../initialize.h"
 
 using namespace std;
 

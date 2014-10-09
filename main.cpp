@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "menuwindow.h"
+#include "GUIWindows/menuwindow.h"
 #include "initialize.h"
 
 int main(int argc, char *argv[])

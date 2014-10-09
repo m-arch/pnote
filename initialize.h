@@ -1,8 +1,8 @@
 #ifndef INITIALIZE_H
 #define INITIALIZE_H
 #include <string>
-#include "usercar.h"
-#include "user.h"
+#include "logic/usercar.h"
+#include "logic/user.h"
 #include <tr1/unordered_map>
 
 using namespace std;

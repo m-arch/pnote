@@ -2,8 +2,7 @@
 #define USERSWINDOW_H
 #include <QTreeWidget>
 #include <QMainWindow>
-#include "user.h"
-#include "usercar.h"
+
 
 namespace Ui {
 class UsersWindow;
@@ -20,7 +19,6 @@ public:
 private:
     Ui::UsersWindow *ui;
     void populateTree ();
-    void addCarToUser (userCar);
 };
 
 #endif // USERSWINDOW_H

@@ -1,6 +1,6 @@
 #include "initialize.h"
 #include <QCoreApplication>
-#include "dbconnect.h"
+#include "logic/dbconnect.h"
 #include <QtSql>
 #include <stddef.h>  // defines NULL
 

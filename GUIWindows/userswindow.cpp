@@ -1,6 +1,6 @@
 #include "userswindow.h"
 #include "ui_userswindow.h"
-#include "initialize.h"
+#include "../initialize.h"
 #include <tr1/unordered_map>
 
 using namespace std::tr1;

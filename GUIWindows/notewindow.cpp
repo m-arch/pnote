@@ -1,8 +1,8 @@
 #include "notewindow.h"
 #include "ui_notewindow.h"
 #include <QFileDialog>
-#include <utilities.h>
-#include <menuwindow.h>
+#include "../logic/utilities.h"
+#include "menuwindow.h"
 
 NoteWindow::NoteWindow(QWidget *parent) :
     QMainWindow(parent),

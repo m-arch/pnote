@@ -13,32 +13,36 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    dbconnect.cpp \
-    dbsetup.cpp \
-    utilities.cpp \
-    menuwindow.cpp \
-    notewindow.cpp \
-    userswindow.cpp \
-    user.cpp \
-    usercar.cpp \
-    initialize.cpp
+    initialize.cpp \
+    GUIWindows/mainwindow.cpp \
+    GUIWindows/menuwindow.cpp \
+    GUIWindows/notewindow.cpp \
+    GUIWindows/userswindow.cpp \
+    logic/dbconnect.cpp \
+    logic/dbsetup.cpp \
+    logic/user.cpp \
+    logic/usercar.cpp \
+    logic/utilities.cpp
 
-HEADERS  += mainwindow.h \
-    dbconnect.h \
-    dbsetup.h \
-    utilities.h \
-    menuwindow.h \
-    notewindow.h \
-    userswindow.h \
-    user.h \
-    usercar.h \
-    initialize.h
+HEADERS  += initialize.h \
+    GUIWindows/mainwindow.h \
+    GUIWindows/menuwindow.h \
+    GUIWindows/notewindow.h \
+    GUIWindows/userswindow.h \
+    logic/dbconnect.h \
+    logic/dbsetup.h \
+    logic/user.h \
+    logic/usercar.h \
+    logic/utilities.h
 
-FORMS    += mainwindow.ui \
-    menuwindow.ui \
-    notewindow.ui \
-    userswindow.ui
+FORMS    += GUIWindows\mainwindow.ui \
+    GUIWindows\menuwindow.ui \
+    GUIWindows\notewindow.ui \
+    GUIWindows\userswindow.ui \
+    GUIWindows/mainwindow.ui \
+    GUIWindows/menuwindow.ui \
+    GUIWindows/notewindow.ui \
+    GUIWindows/userswindow.ui
 
 OTHER_FILES +=
 
