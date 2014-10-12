@@ -7,11 +7,13 @@ CREATE TABLE pnote.user (
        First_Name CHAR(64) NOT NULL,
        Last_Name CHAR(64) NOT NULL,
        Contact_Number VARCHAR NOT NULL,
-       Other_Contact VARCHAR);
+       Other_Contact VARCHAR,
+       Notes TEXT);
 
 CREATE TABLE pnote.user_car(
        ID CHAR(64) PRIMARY KEY NOT NULL,
        user_ID CHAR(64) references pnote.user(id),
+       CAR_PHOTO CHAR NOT NULL,
        CAR_BRAND CHAR(100) NOT NULL,
        CAR_BODY_MODEL CHAR(100) NOT NULL,
        CAR_MOTOR CHAR(100),
@@ -22,8 +24,3 @@ CREATE TABLE pnote.car_reminders(
        CAR_ID CHAR(64) references pnote.user_car(id),
        DUE_DATE DATE,
        INFO TEXT);
-
-CREATE TABLE pnote.user_notes(
-       ID CHAR(64) PRIMARY KEY NOT NULL,
-       USER_ID CHAR(64) references pnote.user(id),
-       NOTE TEXT);
