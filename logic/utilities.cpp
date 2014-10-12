@@ -2,12 +2,8 @@
 #include <stdlib.h>     /* srand, rand */
 #include <QDir>
 
-utilities::utilities()
-{
-}
 
-
-void utilities::generateString(char* s, int len )
+void generateString(char* s, int len )
 {
     static const char alphanum[] =
             "0123456789"
@@ -19,7 +15,7 @@ void utilities::generateString(char* s, int len )
         }
 }
 
-std::string utilities::saveImage(QString oldPath)
+std::string saveImage(QString oldPath)
 //This function takes an image from old path and saves it to public/images directory
 //under a randomly generated 32 charachters alpha numeric name
 //returns the new location in case of success
@@ -34,4 +30,12 @@ std::string utilities::saveImage(QString oldPath)
     newPath = dir.path().toStdString() + "/" + newFile;
     QFile::copy(oldPath, QString::fromStdString(newPath));
     return newPath;
+}
+
+QPixmap getPixmapfromURL(QString url)
+{
+    QImage img = QImage(url);
+    QPixmap pixmap;
+    pixmap = pixmap.fromImage(img.scaled(120,60,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
+    return pixmap;
 }

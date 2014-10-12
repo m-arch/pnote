@@ -8,9 +8,11 @@ initialize* initialize::m_usersInstance = NULL;
 
 initialize::initialize()
 {
-    createConnection();
-    this->initializeUsersHash();
-    closeConnection();
+    if(!m_usersInstance){
+        createConnection();
+        this->initializeUsersHash();
+        closeConnection();
+    }
 }
 
 initialize* initialize::Instance()
@@ -25,14 +27,18 @@ void initialize::initializeUsersHash()
 {
     QSqlQuery query;
     User tmpUser;
-    std::string Id, firstName, lastName, phone;
-    query.exec("SELECT ID, First_Name, Last_Name, Contact_Number FROM pnote.user;");
+    std::tr1::unordered_map<string, userCar> userCarsHash;
+    std::string Id, firstName, lastName, phone, other;
+    query.exec("SELECT ID, First_Name, Last_Name, Contact_Number, Other_Contact FROM pnote.user;");
     while (query.next()){
+        userCar tmpCar;
         Id = query.value(0).toString().toStdString();
         firstName = query.value(1).toString().toStdString();
         lastName = query.value(2).toString().toStdString();
         phone = query.value(3).toString().toStdString();
-        tmpUser.setUser(Id, firstName, lastName, phone);
+ 		other = query.value(4).toString().toStdString();
+        userCarsHash =  tmpCar.makeUserCarsHash(Id);
+        tmpUser.setUser(Id, firstName, lastName, phone, other, userCarsHash);
         this->UsersHash.insert(std::make_pair(Id, tmpUser));
     }
 }

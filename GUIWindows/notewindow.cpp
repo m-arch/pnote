@@ -27,10 +27,9 @@ void NoteWindow::on_browseButton_clicked()
 
 void NoteWindow::on_pushButton_clicked()
 {
-    utilities util;
     QString imagePath = ui->fileLocation->text();
     if (imagePath != "")
-        std::string savedImagePath = util.saveImage(imagePath);
+        std::string savedImagePath = saveImage(imagePath);
 }
 
 void NoteWindow::on_CancelButton_clicked()
