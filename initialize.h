@@ -17,6 +17,8 @@ public:
     static initialize* Instance();
     void initializeUsersHash();
     std::tr1::unordered_map<string, User> getUsersHash();
+    void addUserToHash(string Id, string FirstName, string LastName, string phone, string otherContact, string notes);
+
 
 };
 

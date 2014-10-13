@@ -43,6 +43,21 @@ void initialize::initializeUsersHash()
     }
 }
 
+void initialize::addUserToHash(string Id, string FirstName, string LastName, string phone, string otherContact, string notes)
+{
+    User tmpUser;
+    tmpUser.id = Id;
+    tmpUser.firstName = FirstName;
+    tmpUser.lastName = LastName;
+    tmpUser.phone = phone;
+    tmpUser.otherContact = otherContact;
+    tmpUser.notes = notes;
+    if(!m_usersInstance)
+        m_usersInstance = new initialize;
+
+    m_usersInstance->UsersHash.insert(std::make_pair(Id, tmpUser));
+}
+
 
 std::tr1::unordered_map<string, User> initialize::getUsersHash()
 {

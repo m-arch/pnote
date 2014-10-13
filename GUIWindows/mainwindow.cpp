@@ -51,14 +51,18 @@ void MainWindow::on_SaveButton_clicked()
 
         generateString(ID, 64);
         QString idValue = QString::fromStdString(ID);
-        queryStr = "INSERT INTO pnote.user (ID, First_Name, Last_Name, Contact_Number, Other_Contact) VALUES ('"
+        queryStr = "INSERT INTO pnote.user (ID, First_Name, Last_Name, Contact_Number, Other_Contact, notes) VALUES ('"
                         + idValue + "', '"
                         + ui->FirstName->text() + "', '"
                         + ui->LastName->text() + "', '"
                         + ui->Phone->text() + "', '"
-                        + ui->OtherContact->text() + "');";
+                        + ui->OtherContact->text() + "', '"
+                        + ui->userNote->toPlainText() +"');";
         qDebug() << queryStr;
         query.exec(queryStr);
+        initialize().addUserToHash(idValue.toStdString(), ui->FirstName->text().toStdString(), ui->LastName->text().toStdString(),
+                          ui->Phone->text().toStdString(), ui->OtherContact->text().toStdString(), ui->userNote->toPlainText().toStdString());
+
     }
     closeConnection();
 

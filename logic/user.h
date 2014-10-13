@@ -15,8 +15,8 @@ public:
     User();
     User getUserbyId(string);
     void setUser(string, string, string, string, string, std::tr1::unordered_map<string, userCar>);
+    void setUser(string, string, string, string, string, string, std::tr1::unordered_map<string, userCar>);
     void getUsersHash();
-    void insertUser(string, string, string, string, string, string);
     void deleteUser(string);
     string id, firstName, lastName, phone, otherContact, notes;
     std::tr1::unordered_map<string, userCar> userCarsHash;
