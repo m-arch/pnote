@@ -1,7 +1,7 @@
 #include "menuwindow.h"
 #include "ui_menuwindow.h"
 #include "mainwindow.h"
-#include "usercarswindow.h"
+#include "notewindow.h"
 #include "userswindow.h"
 
 MenuWindow::MenuWindow(QWidget *parent) :
@@ -26,7 +26,7 @@ void MenuWindow::on_addUserButton_clicked()
 void MenuWindow::on_addNoteButton_clicked()
 {
     this->hide();
-    UserCarsWindow *nw = new UserCarsWindow(this);
+    NoteWindow *nw = new NoteWindow(this);
     nw->show();
 }
 

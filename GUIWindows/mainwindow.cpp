@@ -3,8 +3,6 @@
 #include "../logic/dbsetup.h"
 #include "../dbconnect.h"
 #include "../logic/utilities.h"
-#include <QFileDialog>
-#include <QtSql>
 #include "menuwindow.h"
 #include "../initialize.h"
 
@@ -43,22 +41,15 @@ void MainWindow::loadTextFile()
 void MainWindow::on_SaveButton_clicked()
 {
     createConnection();
-    QString queryStr;
     char* ID = new char[64];
-    QSqlQuery query ;
+
     if (checkFormFields() == true)
     {
-
         generateString(ID, 64);
         QString idValue = QString::fromStdString(ID);
-        queryStr = "INSERT INTO pnote.user (ID, First_Name, Last_Name, Contact_Number, Other_Contact) VALUES ('"
-                        + idValue + "', '"
-                        + ui->FirstName->text() + "', '"
-                        + ui->LastName->text() + "', '"
-                        + ui->Phone->text() + "', '"
-                        + ui->OtherContact->text() + "');";
-        qDebug() << queryStr;
-        query.exec(queryStr);
+        User tmpUser;
+        tmpUser.setUser(idValue, ui->FirstName->text(), ui->LastName->text(), ui->Phone->text(), ui->OtherContact->text(), ui->userNote->toPlainText());
+        tmpUser.insertUser();
     }
     closeConnection();
 

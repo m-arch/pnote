@@ -27,24 +27,29 @@ void initialize::initializeUsersHash()
 {
     QSqlQuery query;
     User tmpUser;
-    std::tr1::unordered_map<string, userCar> userCarsHash;
-    std::string Id, firstName, lastName, phone, other;
+    std::tr1::unordered_map<QString, userCar> userCarsHash;
+    QString Id, firstName, lastName, phone, other;
     query.exec("SELECT ID, First_Name, Last_Name, Contact_Number, Other_Contact FROM pnote.user;");
     while (query.next()){
         userCar tmpCar;
-        Id = query.value(0).toString().toStdString();
-        firstName = query.value(1).toString().toStdString();
-        lastName = query.value(2).toString().toStdString();
-        phone = query.value(3).toString().toStdString();
- 		other = query.value(4).toString().toStdString();
+        Id = query.value(0).toString();
+        firstName = query.value(1).toString();
+        lastName = query.value(2).toString();
+        phone = query.value(3).toString();
+        other = query.value(4).toString();
         userCarsHash =  tmpCar.makeUserCarsHash(Id);
         tmpUser.setUser(Id, firstName, lastName, phone, other, userCarsHash);
         this->UsersHash.insert(std::make_pair(Id, tmpUser));
     }
 }
 
+void initialize::setUsersHash(std::tr1::unordered_map<QString, User> newHash)
+{
+    m_usersInstance->UsersHash = newHash;
+}
 
-std::tr1::unordered_map<string, User> initialize::getUsersHash()
+
+std::tr1::unordered_map<QString, User> initialize::getUsersHash()
 {
     return this->UsersHash;
 }

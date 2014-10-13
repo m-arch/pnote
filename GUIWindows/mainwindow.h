@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <string>
 #include <QMainWindow>
+#include "../extensions.h"
 
 namespace Ui {
 class MainWindow;

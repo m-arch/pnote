@@ -2,6 +2,7 @@
 #define MENUWINDOW_H
 
 #include <QMainWindow>
+#include "../extensions.h"
 
 namespace Ui {
 class MenuWindow;

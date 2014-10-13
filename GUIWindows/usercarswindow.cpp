@@ -21,21 +21,20 @@ UserCarsWindow::~UserCarsWindow()
 
 void UserCarsWindow::addUserCars(User *user)
 {
-    unordered_map<std::string, User> usersHash = initialize::Instance()->getUsersHash();
+    unordered_map<QString, User> usersHash = initialize::Instance()->getUsersHash();
     User hashUser = usersHash[user->id];
-    unordered_map<std::string, userCar> userCarsHash = hashUser.userCarsHash;
-    unordered_map<std::string, userCar>::iterator ucItr;
+    unordered_map<QString, userCar> userCarsHash = hashUser.userCarsHash;
+    unordered_map<QString, userCar>::iterator ucItr;
     for ( ucItr = userCarsHash.begin(); ucItr != userCarsHash.end(); ucItr++)
     {
         userCar tmpCar = (*ucItr).second;
-        QPixmap pixmap = getPixmapfromURL(QString::fromStdString(tmpCar.photo));
-        generateCarwidget(pixmap, QString::fromStdString(tmpCar.brand), QString::fromStdString(tmpCar.model),
-                          QString::fromStdString(tmpCar.motor), tmpCar.year, 70, 90);
+        QPixmap pixmap = getPixmapfromURL(tmpCar.photo);
+        generateCarwidget(pixmap, tmpCar.brand, tmpCar.model, tmpCar.motor, tmpCar.year, 70, 90);
 
     }
-    ui->username->setText(QString::fromStdString(user->firstName) + " "+ QString::fromStdString(user->lastName));
-    ui->phone->setText(QString::fromStdString(user->phone));
-    ui->othercontact->setText(QString::fromStdString(user->otherContact));
+    ui->username->setText(user->firstName + " "+ user->lastName);
+    ui->phone->setText(user->phone);
+    ui->othercontact->setText(user->otherContact);
 }
 
 void UserCarsWindow::generateCarwidget(QPixmap pix, QString brand, QString model, QString motor, int year,int px,int py)

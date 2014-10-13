@@ -4,6 +4,7 @@
 #include "../logic/usercar.h"
 #include <QMainWindow>
 #include <stddef.h>  // defines NULL
+#include "../extensions.h"
 
 namespace Ui {
 class UserCarsWindow;

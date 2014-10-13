@@ -2,6 +2,7 @@
 #define NOTEWINDOW_H
 
 #include <QMainWindow>
+#include "../extensions.h"
 
 namespace Ui {
 class NoteWindow;
@@ -18,12 +19,14 @@ public:
 private slots:
     void on_browseButton_clicked();
 
-    void on_pushButton_clicked();
-
     void on_CancelButton_clicked();
+
+    void on_saveButton_clicked();
 
 private:
     Ui::NoteWindow *ui;
+    bool checkFormFields();
+
 };
 
 #endif // NOTEWINDOW_H
