@@ -2,6 +2,7 @@
 #define NOTEWINDOW_H
 
 #include <QMainWindow>
+#include "../extensions.h"
 
 namespace Ui {
 class NoteWindow;

@@ -60,8 +60,8 @@ void MainWindow::on_SaveButton_clicked()
                         + ui->userNote->toPlainText() +"');";
         qDebug() << queryStr;
         query.exec(queryStr);
-        initialize().addUserToHash(idValue.toStdString(), ui->FirstName->text().toStdString(), ui->LastName->text().toStdString(),
-                          ui->Phone->text().toStdString(), ui->OtherContact->text().toStdString(), ui->userNote->toPlainText().toStdString());
+        initialize().addUserToHash(idValue, ui->FirstName->text(), ui->LastName->text(),
+                          ui->Phone->text(), ui->OtherContact->text(), ui->userNote->toPlainText());
 
     }
     closeConnection();

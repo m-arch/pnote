@@ -1,22 +1,23 @@
 #ifndef USERCAR_H
 #define USERCAR_H
-#include <string>
+#include <QString>
 #include <tr1/unordered_map>
+#include "../extensions.h"
 
 using namespace std;
 
 class userCar
 {
 private:
-    string id, userId;
+    QString id, userId;
 
 public:
     userCar();
-    void setCar(string, string, string, string, string, string, int);
+    void setCar(QString, QString, QString, QString, QString, QString, int);
     void insertUserCar();
-    string brand, model, motor, photo;
+    QString brand, model, motor, photo;
     int year;
-    std::tr1::unordered_map<string, userCar> makeUserCarsHash(string);
+    std::tr1::unordered_map<QString, userCar> makeUserCarsHash(QString);
 
 };
 

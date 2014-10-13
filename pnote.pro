@@ -35,7 +35,8 @@ HEADERS  += initialize.h \
     logic/user.h \
     logic/usercar.h \
     logic/utilities.h \
-    GUIWindows/usercarswindow.h
+    GUIWindows/usercarswindow.h \
+    extensions.h
 
 FORMS    += GUIWindows/mainwindow.ui \
     GUIWindows/menuwindow.ui \

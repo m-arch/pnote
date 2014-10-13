@@ -4,6 +4,7 @@
 #include "dbconnect.h"
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
+#include "../extensions.h"
 
 class dbSetup
 {

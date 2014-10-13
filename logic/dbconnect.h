@@ -3,6 +3,7 @@
 
 #include <QSqlDatabase>
 #include <string>
+#include "../extensions.h"
 
 
 bool createConnection();

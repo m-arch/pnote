@@ -21,14 +21,14 @@ UsersWindow::~UsersWindow()
 
 void UsersWindow::populateTree()
 {
-    unordered_map<std::string, User> usersHash = initialize::Instance()->getUsersHash();
-    unordered_map<std::string, User>::iterator itr;
+    unordered_map<QString, User> usersHash = initialize::Instance()->getUsersHash();
+    unordered_map<QString, User>::iterator itr;
     for ( itr = usersHash.begin(); itr != usersHash.end(); itr++)
     {
         User tmpUser = (*itr).second;
         QTreeWidgetItem *treeItem = new QTreeWidgetItem(ui->treeWidget);
-        treeItem->setText(0, QString::fromStdString(tmpUser.firstName));
-        treeItem->setText(1, QString::fromStdString(tmpUser.lastName));
-        treeItem->setText(2, QString::fromStdString(tmpUser.phone));
+        treeItem->setText(0, tmpUser.firstName);
+        treeItem->setText(1, tmpUser.lastName);
+        treeItem->setText(2, tmpUser.phone);
     }
 }

@@ -2,6 +2,7 @@
 #define USERSWINDOW_H
 #include <QTreeWidget>
 #include <QMainWindow>
+#include "../extensions.h"
 
 
 namespace Ui {

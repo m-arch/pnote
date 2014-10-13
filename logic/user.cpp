@@ -8,7 +8,7 @@ User::User()
 {
 }
 
-void User::setUser(string Id, string FirstName, string LastName, string phone, string otherContact, std::tr1::unordered_map<string, userCar> userCar)
+void User::setUser(QString Id, QString FirstName, QString LastName, QString phone, QString otherContact, std::tr1::unordered_map<QString, userCar> userCar)
 {
     this->id = Id;
     this->firstName = FirstName;
@@ -18,7 +18,7 @@ void User::setUser(string Id, string FirstName, string LastName, string phone, s
     this->userCarsHash = userCar;
 }
 
-void User::setUser(string Id, string FirstName, string LastName, string phone, string otherContact, string notes, std::tr1::unordered_map<string, userCar> userCar)
+void User::setUser(QString Id, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes, std::tr1::unordered_map<QString, userCar> userCar)
 {
     this->id = Id;
     this->firstName = FirstName;

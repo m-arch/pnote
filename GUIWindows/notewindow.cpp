@@ -45,8 +45,8 @@ void NoteWindow::on_saveButton_clicked()
         {
             std::string savedImagePath = saveImage(imagePath);
             userCar newCar;
-            newCar.setCar(idValue.toStdString(), "userId", savedImagePath, ui->Brand->text().toStdString(), ui->Model->text().toStdString(),
-                          ui->Motor->text().toStdString(), ui->Year->text().toInt());
+            newCar.setCar(idValue, "userId", QString::fromStdString(savedImagePath), ui->Brand->text(), ui->Model->text(),
+                          ui->Motor->text(), ui->Year->text().toInt());
             newCar.insertUserCar();
 
         }
