@@ -43,19 +43,9 @@ void initialize::initializeUsersHash()
     }
 }
 
-void initialize::addUserToHash(QString Id, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes)
+void initialize::setUsersHash(std::tr1::unordered_map<QString, User> newHash)
 {
-    User tmpUser;
-    tmpUser.id = Id;
-    tmpUser.firstName = FirstName;
-    tmpUser.lastName = LastName;
-    tmpUser.phone = phone;
-    tmpUser.otherContact = otherContact;
-    tmpUser.notes = notes;
-    if(!m_usersInstance)
-        m_usersInstance = new initialize;
-
-    m_usersInstance->UsersHash.insert(std::make_pair(Id, tmpUser));
+    m_usersInstance->UsersHash = newHash;
 }
 
 

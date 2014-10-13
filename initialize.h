@@ -18,7 +18,7 @@ public:
     static initialize* Instance();
     void initializeUsersHash();
     std::tr1::unordered_map<QString, User> getUsersHash();
-    void addUserToHash(QString Id, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes);
+    void setUsersHash(std::tr1::unordered_map<QString, User>);
 
 
 };

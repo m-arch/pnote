@@ -61,5 +61,6 @@ void userCar::insertUserCar()
     query.exec(queryStr);
     User hashUser = usersHash[this->userId];
     hashUser.userCarsHash.insert(std::make_pair(this->id, *this));
+    initialize::Instance()->setUsersHash(usersHash);
 
 }
