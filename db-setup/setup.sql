@@ -1,7 +1,7 @@
 DROP SCHEMA pnote cascade;
 CREATE SCHEMA pnote;
 CREATE DATABASE pnote;
-\connect pnot;
+\connect pnote;
 CREATE TABLE pnote.user (
        ID CHAR(64) PRIMARY KEY NOT NULL,
        First_Name CHAR(64) NOT NULL,

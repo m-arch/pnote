@@ -2,68 +2,336 @@
 <ui version="4.0">
  <class>MenuWindow</class>
  <widget class="QMainWindow" name="MenuWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>622</width>
-    <height>153</height>
+    <width>1058</width>
+    <height>854</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>30</y>
-      <width>520</width>
+      <x>80</x>
+      <y>23</y>
+      <width>891</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="username">
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="phone">
+         <property name="font">
+          <font>
+           <family>Ubuntu Condensed</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="othercontact">
+         <property name="font">
+          <font>
+           <family>Ubuntu Condensed</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>60</y>
+      <width>841</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>100</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Notes</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>110</y>
+      <width>341</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="notes">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>140</y>
+      <width>741</width>
+      <height>81</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="nextUser">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>80</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="previousUser">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>70</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>Previous</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>110</y>
+      <width>341</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>320</y>
+      <width>441</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="userId">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>290</y>
+      <width>311</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>userId</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>280</y>
+      <width>231</width>
       <height>32</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="spacing">
-      <number>26</number>
-     </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QPushButton" name="addUserButton">
        <property name="text">
-        <string>Create User</string>
+        <string>New User</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="addNoteButton">
+      <widget class="QPushButton" name="editUser">
        <property name="text">
-        <string>Add note</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="showUsersButton">
-       <property name="text">
-        <string>Users</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="showRemindersButton">
-       <property name="text">
-        <string>Reminders</string>
+        <string>Edit</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="addNoteButton">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>340</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>New Car</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>320</y>
+      <width>431</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>320</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cars</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nextId">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>875</x>
+      <y>110</y>
+      <width>181</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>nextId</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="previousId">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>previousId</string>
+    </property>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget_2</zorder>
+   <zorder>line</zorder>
+   <zorder>line_2</zorder>
+   <zorder>notes</zorder>
+   <zorder>nextUser</zorder>
+   <zorder>previousUser</zorder>
+   <zorder>label</zorder>
+   <zorder>line_3</zorder>
+   <zorder>line_4</zorder>
+   <zorder>userId</zorder>
+   <zorder>addNoteButton</zorder>
+   <zorder>line_5</zorder>
+   <zorder>label_2</zorder>
+   <zorder>nextId</zorder>
+   <zorder>previousId</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>622</width>
+     <width>1058</width>
      <height>28</height>
     </rect>
    </property>

@@ -10,36 +10,29 @@ User::User()
 {
 }
 
-void User::setUser(QString Id, QString FirstName, QString LastName, QString phone, QString otherContact, std::tr1::unordered_map<QString, userCar> userCar)
+void User::setUser(QString Id, QString previousId, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes, std::tr1::unordered_map<QString, userCar> userCar)
 {
     this->id = Id;
+    this->previousId = previousId;
     this->firstName = FirstName;
     this->lastName = LastName;
     this->phone = phone;
     this->otherContact = otherContact;
     this->userCarsHash = userCar;
+    this->notes = notes;
 }
 
-void User::setUser(QString Id, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes)
+void User::setUser(QString Id, QString previousId, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes)
 {
     this->id = Id;
     this->firstName = FirstName;
     this->lastName = LastName;
     this->phone = phone;
+    this->previousId = previousId;
     this->otherContact = otherContact;
     this->notes = notes;
 }
 
-void User::setUser(QString Id, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes, std::tr1::unordered_map<QString, userCar> userCar)
-{
-    this->id = Id;
-    this->firstName = FirstName;
-    this->lastName = LastName;
-    this->phone = phone;
-    this->otherContact = otherContact;
-    this->notes = notes;
-    this->userCarsHash = userCar;
-}
 
 void User::insertUser()
 {
@@ -59,4 +52,10 @@ void User::insertUser()
     query.exec(queryStr);
     usersHash.insert(std::make_pair(this->id, *this));
     initialize::Instance()->setUsersHash(usersHash);
+}
+
+User User::getUserbyId(QString userId)
+{
+    std::tr1::unordered_map<QString, User> usersHash = initialize::Instance()->getUsersHash();
+    return usersHash[userId];
 }
