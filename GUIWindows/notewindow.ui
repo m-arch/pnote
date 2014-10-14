@@ -20,7 +20,7 @@
       <x>40</x>
       <y>31</y>
       <width>551</width>
-      <height>31</height>
+      <height>32</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -195,6 +195,19 @@
     </property>
     <property name="text">
      <string>Make Year</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="userId">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>280</y>
+      <width>171</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>

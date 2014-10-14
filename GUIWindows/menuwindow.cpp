@@ -30,6 +30,7 @@ void MenuWindow::on_addNoteButton_clicked()
     this->hide();
     NoteWindow *nw = new NoteWindow(this);
     nw->show();
+    nw->setUserIdLabel(ui->userId->text());
 }
 
 void MenuWindow::on_showUsersButton_clicked()

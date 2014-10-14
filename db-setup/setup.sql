@@ -13,7 +13,7 @@ CREATE TABLE pnote.user (
 CREATE TABLE pnote.user_car(
        ID CHAR(64) PRIMARY KEY NOT NULL,
        user_ID CHAR(64) references pnote.user(id),
-       CAR_PHOTO CHAR NOT NULL,
+       CAR_PHOTO CHAR(100) NOT NULL,
        CAR_BRAND CHAR(100) NOT NULL,
        CAR_BODY_MODEL CHAR(100) NOT NULL,
        CAR_MOTOR CHAR(100),

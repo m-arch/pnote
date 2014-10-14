@@ -4,6 +4,7 @@
 #include "../logic/utilities.h"
 #include "menuwindow.h"
 #include "../logic/usercar.h"
+#include "../logic/dbconnect.h"
 
 NoteWindow::NoteWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -45,9 +46,11 @@ void NoteWindow::on_saveButton_clicked()
         {
             std::string savedImagePath = saveImage(imagePath);
             userCar newCar;
-            newCar.setCar(idValue, "userId", QString::fromStdString(savedImagePath), ui->Brand->text(), ui->Model->text(),
+            newCar.setCar(idValue, ui->userId->text(), QString::fromStdString(savedImagePath), ui->Brand->text(), ui->Model->text(),
                           ui->Motor->text(), ui->Year->text().toInt());
+            createConnection();
             newCar.insertUserCar();
+            closeConnection();
 
         }
 
@@ -58,3 +61,9 @@ bool NoteWindow::checkFormFields()
 {
     return true;
 }
+
+void NoteWindow::setUserIdLabel(QString userId)
+{
+    ui->userId->setText(userId);
+}
+
