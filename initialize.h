@@ -13,9 +13,12 @@ class initialize
 private:
     std::tr1::unordered_map<QString, User> UsersHash;
     static initialize* m_usersInstance;
+    void updateHashEntry(User);
+
 public:
     initialize();
     static initialize* Instance();
+    User firstUser, lastUser;
     void initializeUsersHash();
     std::tr1::unordered_map<QString, User> getUsersHash();
     void setUsersHash(std::tr1::unordered_map<QString, User>);

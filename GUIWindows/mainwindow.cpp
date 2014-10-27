@@ -48,8 +48,10 @@ void MainWindow::on_SaveButton_clicked()
         generateString(ID, 64);
         QString idValue = QString::fromStdString(ID);
         User tmpUser;
-        tmpUser.setUser(idValue, ui->FirstName->text(), ui->LastName->text(), ui->Phone->text(), ui->OtherContact->text(), ui->userNote->toPlainText());
+        User lastUser = initialize::Instance()->lastUser;
+        tmpUser.setUser(idValue, lastUser.id, ui->FirstName->text(), ui->LastName->text(), ui->Phone->text(), ui->OtherContact->text(), ui->userNote->toPlainText());
         tmpUser.insertUser();
+        lastUser.nextId = idValue;
     }
     closeConnection();
 

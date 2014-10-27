@@ -15,6 +15,7 @@ class NoteWindow : public QMainWindow
 public:
     explicit NoteWindow(QWidget *parent = 0);
     ~NoteWindow();
+    void setUserIdLabel(QString);
 
 private slots:
     void on_browseButton_clicked();

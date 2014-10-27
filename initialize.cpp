@@ -27,9 +27,10 @@ void initialize::initializeUsersHash()
 {
     QSqlQuery query;
     User tmpUser;
+    QString previousId = "";
     std::tr1::unordered_map<QString, userCar> userCarsHash;
-    QString Id, firstName, lastName, phone, other;
-    query.exec("SELECT ID, First_Name, Last_Name, Contact_Number, Other_Contact FROM pnote.user;");
+    QString Id, firstName, lastName, phone, other, notes;
+    query.exec("SELECT ID, First_Name, Last_Name, Contact_Number, Other_Contact, Notes FROM pnote.user;");
     while (query.next()){
         userCar tmpCar;
         Id = query.value(0).toString();
@@ -37,15 +38,36 @@ void initialize::initializeUsersHash()
         lastName = query.value(2).toString();
         phone = query.value(3).toString();
         other = query.value(4).toString();
+        notes = query.value(5).toString();
         userCarsHash =  tmpCar.makeUserCarsHash(Id);
-        tmpUser.setUser(Id, firstName, lastName, phone, other, userCarsHash);
+        tmpUser.setUser(Id, previousId, firstName, lastName, phone, other, notes, userCarsHash);
         this->UsersHash.insert(std::make_pair(Id, tmpUser));
+        if (previousId != "")
+        {
+            User hashUser = this->UsersHash[previousId];
+            if (this->firstUser.nextId == "")
+                this->firstUser.nextId = Id;
+
+            hashUser.nextId = Id;
+            this->UsersHash[previousId] = hashUser;
+
+        }
+        else
+            this->firstUser = tmpUser;
+
+        previousId = Id;
+        this->lastUser = tmpUser;
     }
 }
 
 void initialize::setUsersHash(std::tr1::unordered_map<QString, User> newHash)
 {
     m_usersInstance->UsersHash = newHash;
+}
+
+void initialize::updateHashEntry(User updatedUser)
+{
+    m_usersInstance->UsersHash[updatedUser.id] = updatedUser;
 }
 
 

@@ -22,8 +22,7 @@ SOURCES += main.cpp\
     logic/dbsetup.cpp \
     logic/user.cpp \
     logic/usercar.cpp \
-    logic/utilities.cpp \
-    GUIWindows/usercarswindow.cpp
+    logic/utilities.cpp
 
 HEADERS  += initialize.h \
     GUIWindows/mainwindow.h \
@@ -35,14 +34,12 @@ HEADERS  += initialize.h \
     logic/user.h \
     logic/usercar.h \
     logic/utilities.h \
-    GUIWindows/usercarswindow.h \
     extensions.h
 
 FORMS    += GUIWindows/mainwindow.ui \
     GUIWindows/menuwindow.ui \
     GUIWindows/notewindow.ui \
-    GUIWindows/userswindow.ui \
-    GUIWindows/usercarswindow.ui
+    GUIWindows/userswindow.ui
 
 OTHER_FILES +=
 

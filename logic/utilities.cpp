@@ -34,6 +34,8 @@ std::string saveImage(QString oldPath)
 
 QPixmap getPixmapfromURL(QString url)
 {
+    url = url.simplified();
+    url.replace( " ", "" );
     QImage img = QImage(url);
     QPixmap pixmap;
     pixmap = pixmap.fromImage(img.scaled(120,60,Qt::IgnoreAspectRatio,Qt::SmoothTransformation));
