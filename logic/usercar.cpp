@@ -17,7 +17,7 @@ std::tr1::unordered_map<QString, userCar> userCar::makeUserCarsHash(QString user
     QSqlQuery query;
     QString id, photo, brand, model, motor;
     int year;
-    query.exec("SELECT ID, CAR_PHOTO, CAR_BRAND, CAR_BODY_MODEL, CAR_MOTOR, CAR_YEAR FROM pnote.user_car WHERE user_ID = " + userId +";" );
+    query.exec("SELECT ID, CAR_PHOTO, CAR_BRAND, CAR_BODY_MODEL, CAR_MOTOR, CAR_YEAR FROM pnote.user_car WHERE user_ID = '" + userId +"' ;" );
     while (query.next()){
         id = query.value(0).toString();
         photo = query.value(1).toString();

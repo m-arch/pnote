@@ -208,6 +208,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="visible">
+      <bool>false</bool>
+    </property>
     <property name="text">
      <string>userId</string>
     </property>
@@ -281,6 +284,9 @@
     <property name="enabled">
      <bool>true</bool>
     </property>
+    <property name="visible">
+      <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>875</x>
@@ -308,6 +314,19 @@
     <property name="text">
      <string>previousId</string>
     </property>
+    <property name="visible">
+      <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="carsSection" native="true">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>390</y>
+      <width>971</width>
+      <height>391</height>
+     </rect>
+    </property>
    </widget>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget_2</zorder>
@@ -325,6 +344,7 @@
    <zorder>label_2</zorder>
    <zorder>nextId</zorder>
    <zorder>previousId</zorder>
+   <zorder>carsSection</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
