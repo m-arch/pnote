@@ -20,6 +20,7 @@ public:
     void getUsersHash();
     void insertUser();
     void deleteUser(QString);
+    void updateUser(User*);
     QString id, firstName, lastName, phone, otherContact, notes, nextId, previousId;
     std::tr1::unordered_map<QString, userCar> userCarsHash;
     //void updateUser....

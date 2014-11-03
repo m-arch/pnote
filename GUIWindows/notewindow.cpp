@@ -40,12 +40,11 @@ void NoteWindow::on_saveButton_clicked()
         char* ID = new char[64];
         generateString(ID, 64);
         QString idValue = QString::fromStdString(ID);
-
+        userCar newCar;
         QString imagePath = ui->fileLocation->text();
         if (imagePath != "")
         {
             std::string savedImagePath = saveImage(imagePath);
-            userCar newCar;
             newCar.setCar(idValue, ui->userId->text(), QString::fromStdString(savedImagePath), ui->Brand->text(), ui->Model->text(),
                           ui->Motor->text(), ui->Year->text().toInt());
             createConnection();
@@ -53,7 +52,11 @@ void NoteWindow::on_saveButton_clicked()
             closeConnection();
 
         }
-
+        User user;
+        user = user.getUserbyId(ui->userId->text());
+        this->close();
+        MenuWindow *mw = new MenuWindow(this,&user);
+        mw->show();
     }
 }
 

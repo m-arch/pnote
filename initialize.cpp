@@ -1,4 +1,4 @@
-#include "initialize.h"
+    #include "initialize.h"
 #include <QCoreApplication>
 #include "logic/dbconnect.h"
 #include <QtSql>

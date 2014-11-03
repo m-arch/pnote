@@ -7,13 +7,17 @@
 #include "../logic/utilities.h"
 #include <QImage>
 
-MenuWindow::MenuWindow(QWidget *parent) :
+MenuWindow::MenuWindow(QWidget *parent, User *user) :
     QMainWindow(parent),
     ui(new Ui::MenuWindow)
 {
     ui->setupUi(this);
-    loadFirstUser();
+    if(user != 0)
+        loadUser(*user);
+    else
+        loadFirstUser();
 }
+
 
 MenuWindow::~MenuWindow()
 {
@@ -35,16 +39,15 @@ void MenuWindow::on_addNoteButton_clicked()
     nw->setUserIdLabel(ui->userId->text());
 }
 
-void MenuWindow::on_showUsersButton_clicked()
-{
-    this->hide();
-    UsersWindow *uw = new UsersWindow(this);
-    uw->show();
-}
 
 void MenuWindow::loadFirstUser()
 {
     User user = initialize::Instance()->firstUser;
+    this->setUserFields(user);
+}
+
+void MenuWindow::loadUser(User user)
+{
     this->setUserFields(user);
 }
 
