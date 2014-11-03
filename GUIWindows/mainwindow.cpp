@@ -52,6 +52,10 @@ void MainWindow::on_SaveButton_clicked()
         tmpUser.setUser(idValue, lastUser.id, ui->FirstName->text(), ui->LastName->text(), ui->Phone->text(), ui->OtherContact->text(), ui->userNote->toPlainText());
         tmpUser.insertUser();
         lastUser.nextId = idValue;
+        initialize::Instance()->updateHashEntry(lastUser);
+        this->close();
+        MenuWindow *mw = new MenuWindow(this,&tmpUser);
+        mw->show();
     }
     closeConnection();
 
