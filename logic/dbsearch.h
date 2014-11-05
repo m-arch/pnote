@@ -1,10 +1,9 @@
 #ifndef DBSEARCH_H
 #define DBSEARCH_H
+#include "user.h"
+#include <QSqlDatabase>
+#include <QString>
 
-class dbSearch
-{
-public:
-    dbSearch();
-};
+void getUserandCarFromVIN (QString, User*, userCar*);
 
 #endif // DBSEARCH_H

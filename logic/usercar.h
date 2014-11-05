@@ -9,15 +9,18 @@ using namespace std;
 class userCar
 {
 private:
-    QString id, userId;
+
 
 public:
     userCar();
-    void setCar(QString, QString, QString, QString, QString, QString, int);
+    void setCar(QString, QString, QString, QString, QString, QString, QString, int);
+    void setCar(int, QString, QString, QString, QString, QString, QString, QString, int);
     void insertUserCar();
-    QString brand, model, motor, photo;
+    QString brand, model, motor, color, plateNumber, VIN;
     int year;
     std::tr1::unordered_map<QString, userCar> makeUserCarsHash(QString);
+    QString userId;
+    int id;
 
 };
 

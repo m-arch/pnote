@@ -21,15 +21,12 @@ NoteWindow::~NoteWindow()
 void NoteWindow::on_browseButton_clicked()
 {
     //do not forget to save home location as a global variable that depends on the os arch
-    QString fileName = QFileDialog::getOpenFileName(this,
-            tr("Open Image"), "/home/marc", tr("Image Files (*.png *.jpg *.bmp)"));
-    ui->fileLocation->setProperty("text", fileName);
 }
 
 
 void NoteWindow::on_CancelButton_clicked()
 {
-    this->hide();
+    this->close();
     MenuWindow *mw = new MenuWindow(this);
     mw->show();
 }
@@ -37,15 +34,12 @@ void NoteWindow::on_CancelButton_clicked()
 void NoteWindow::on_saveButton_clicked()
 {
     if(this->checkFormFields()){
-        char* ID = new char[64];
-        generateString(ID, 64);
-        QString idValue = QString::fromStdString(ID);
         userCar newCar;
-        QString imagePath = ui->fileLocation->text();
+        QString imagePath = ui->Color->text();
         if (imagePath != "")
         {
             std::string savedImagePath = saveImage(imagePath);
-            newCar.setCar(idValue, ui->userId->text(), QString::fromStdString(savedImagePath), ui->Brand->text(), ui->Model->text(),
+            newCar.setCar(ui->carVIN->text(), ui->Plate_Number->text(), ui->userId->text(), ui->Color->text(), ui->Brand->text(), ui->Model->text(),
                           ui->Motor->text(), ui->Year->text().toInt());
             createConnection();
             newCar.insertUserCar();
@@ -53,7 +47,7 @@ void NoteWindow::on_saveButton_clicked()
 
         }
         User user;
-        user = user.getUserbyId(ui->userId->text());
+        user = getUserbyId(ui->userId->text());
         this->close();
         MenuWindow *mw = new MenuWindow(this,&user);
         mw->show();

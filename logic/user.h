@@ -14,7 +14,6 @@ private:
 
 public:
     User();
-    User getUserbyId(QString);
     void setUser(QString, QString, QString, QString, QString, QString, QString, std::tr1::unordered_map<QString, userCar>);
     void setUser(QString, QString, QString, QString, QString, QString, QString);
     void getUsersHash();
@@ -25,5 +24,7 @@ public:
     std::tr1::unordered_map<QString, userCar> userCarsHash;
     //void updateUser....
 };
+User getUserbyId(QString);
+
 
 #endif // USER_H

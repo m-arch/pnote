@@ -41,11 +41,11 @@ void MainWindow::loadTextFile()
 void MainWindow::on_SaveButton_clicked()
 {
     createConnection();
-    char* ID = new char[64];
+    char* ID = new char[63];
 
     if (checkFormFields() == true)
     {
-        generateString(ID, 64);
+        generateString(ID, 63);
         QString idValue = QString::fromStdString(ID);
         User tmpUser;
         User lastUser = initialize::Instance()->lastUser;

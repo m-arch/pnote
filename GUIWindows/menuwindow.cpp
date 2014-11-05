@@ -3,9 +3,11 @@
 #include "mainwindow.h"
 #include "notewindow.h"
 #include "userswindow.h"
+#include "vinlookup.h"
 #include "../initialize.h"
 #include "../logic/utilities.h"
 #include <QImage>
+#include "cartab.h"
 
 MenuWindow::MenuWindow(QWidget *parent, User *user) :
     QMainWindow(parent),
@@ -53,7 +55,7 @@ void MenuWindow::loadUser(User user)
 
 void MenuWindow::setUserFields(User user)
 {
-    while ( QWidget* w = ui->carsSection->findChild<QWidget*>() )
+    while ( QTabWidget* w = ui->carsSection->findChild<QTabWidget*>() )
             delete w;
 
     ui->username->setText(user.firstName.replace("  ","") + "   "+ user.lastName.replace("  ",""));
@@ -63,13 +65,14 @@ void MenuWindow::setUserFields(User user)
     ui->userId->setText(user.id);
     ui->nextId->setText(user.nextId);
     ui->previousId->setText(user.previousId);
-    fillCarsWidget(ui->carsSection, user.userCarsHash);
+    setCarsFields (ui->carsSection, user.userCarsHash);
+    //fillCarsWidget(ui->carsSection, user.userCarsHash);
 }
 
 void MenuWindow::on_nextUser_clicked()
 {
     User user;
-    user = user.getUserbyId(ui->nextId->text());
+    user = getUserbyId(ui->nextId->text());
     if (user.id != "")
     {
         setUserFields(user);
@@ -81,11 +84,30 @@ void MenuWindow::on_nextUser_clicked()
 void MenuWindow::on_previousUser_clicked()
 {
     User user;
-    user = user.getUserbyId(ui->previousId->text());
+    user = getUserbyId(ui->previousId->text());
     if (user.id != "")
     {
         setUserFields(user);
     }
+}
+
+void setCarsFields(QWidget *carsWidget, unordered_map<QString, userCar> userCarsHash)
+{
+    unordered_map<QString, userCar>::iterator ucItr;
+    QTabWidget *twid = new QTabWidget(carsWidget);
+    twid->setGeometry(0, 0, carsWidget->width(), carsWidget->height());
+    for ( ucItr = userCarsHash.begin(); ucItr != userCarsHash.end(); ucItr++)
+    {
+        userCar tmpCar = (*ucItr).second;
+        carTab *ct = new carTab(&tmpCar);
+        twid->addTab(ct, tmpCar.brand);
+    }
+    twid->show();
+}
+
+void fillCarWidget(QWidget *widg, userCar car)
+{
+
 }
 
 void fillCarsWidget(QWidget *carsWidget,unordered_map<QString, userCar> userCarsHash)
@@ -97,7 +119,7 @@ void fillCarsWidget(QWidget *carsWidget,unordered_map<QString, userCar> userCars
     for ( ucItr = userCarsHash.begin(); ucItr != userCarsHash.end(); ucItr++)
     {
         userCar tmpCar = (*ucItr).second;
-        QPixmap pixmap = getPixmapfromURL(tmpCar.photo);
+        QPixmap pixmap = getPixmapfromURL(tmpCar.color);
         drawCar(carsWidget, pixmap, tmpCar.brand, tmpCar.model, tmpCar.motor, tmpCar.year, (191* (counter%nbrpline))+30, (150 * (int)(counter/nbrpline)) + 30);
         counter++;
     }
@@ -115,10 +137,17 @@ void drawCar(QWidget *parentWidget, QPixmap pix, QString brand, QString model, Q
     modelbrand->setGeometry(0, 72, 131, 22);
     QLabel *motoryear = new QLabel(wid);
     motoryear->setGeometry(0, 94, 131, 22);
-    brand.replace("  ","");
-    model.replace("  ","");
-    motor.replace("  ","");
+    brand.trimmed();
+    model.trimmed();
+    motor.trimmed();
     modelbrand->setText(brand +"  "+ model);
     motoryear->setText(motor +"  "+ QString::number(year));
     wid->show();
+}
+
+
+void MenuWindow::on_printVinButton_clicked()
+{
+    vinlookup *vinw = new vinlookup(this);
+    vinw->show();
 }
