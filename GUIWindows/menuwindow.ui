@@ -20,39 +20,23 @@
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>23</y>
-      <width>891</width>
-      <height>44</height>
+      <x>240</x>
+      <y>20</y>
+      <width>621</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QLabel" name="username">
-       <property name="font">
-        <font>
-         <family>Ubuntu Condensed</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="phone">
+        <widget class="QLabel" name="username">
          <property name="font">
           <font>
            <family>Ubuntu Condensed</family>
-           <pointsize>9</pointsize>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="layoutDirection">
@@ -62,26 +46,7 @@
           <string>TextLabel</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="othercontact">
-         <property name="font">
-          <font>
-           <family>Ubuntu Condensed</family>
-           <pointsize>9</pointsize>
-          </font>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -89,24 +54,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>60</y>
-      <width>841</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>100</y>
+      <x>230</x>
+      <y>120</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -115,37 +67,32 @@
      <string>Notes</string>
     </property>
    </widget>
-   <widget class="Line" name="line_2">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>110</y>
-      <width>341</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="notes">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>140</y>
-      <width>741</width>
-      <height>81</height>
+      <x>230</x>
+      <y>150</y>
+      <width>631</width>
+      <height>71</height>
      </rect>
     </property>
    </widget>
    <widget class="QCommandLinkButton" name="nextUser">
     <property name="geometry">
      <rect>
-      <x>970</x>
-      <y>80</y>
-      <width>71</width>
-      <height>31</height>
+      <x>950</x>
+      <y>30</y>
+      <width>101</width>
+      <height>161</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="text">
      <string>Next</string>
@@ -157,10 +104,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>70</y>
-      <width>91</width>
-      <height>31</height>
+      <x>10</x>
+      <y>30</y>
+      <width>111</width>
+      <height>161</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -168,19 +115,6 @@
     </property>
     <property name="text">
      <string>Previous</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line_3">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>110</y>
-      <width>341</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
    <widget class="Line" name="line_4">
@@ -209,7 +143,7 @@
      </rect>
     </property>
     <property name="visible">
-      <bool>false</bool>
+     <bool>false</bool>
     </property>
     <property name="text">
      <string>userId</string>
@@ -218,24 +152,31 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>780</x>
-      <y>280</y>
-      <width>231</width>
-      <height>32</height>
+      <x>290</x>
+      <y>270</y>
+      <width>401</width>
+      <height>41</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QPushButton" name="addUserButton">
+      <widget class="QPushButton" name="printVinButton">
        <property name="text">
-        <string>New User</string>
+        <string>Print VIN</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="editUser">
+      <widget class="QPushButton" name="editUserButton">
        <property name="text">
-        <string>Edit</string>
+        <string>Edit User</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addUserButton">
+       <property name="text">
+        <string>New User</string>
        </property>
       </widget>
      </item>
@@ -284,9 +225,6 @@
     <property name="enabled">
      <bool>true</bool>
     </property>
-    <property name="visible">
-      <bool>false</bool>
-    </property>
     <property name="geometry">
      <rect>
       <x>875</x>
@@ -294,6 +232,9 @@
       <width>181</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="visible">
+     <bool>false</bool>
     </property>
     <property name="text">
      <string>nextId</string>
@@ -311,11 +252,11 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="visible">
+     <bool>false</bool>
+    </property>
     <property name="text">
      <string>previousId</string>
-    </property>
-    <property name="visible">
-      <bool>false</bool>
     </property>
    </widget>
    <widget class="QWidget" name="carsSection" native="true">
@@ -323,20 +264,106 @@
      <rect>
       <x>40</x>
       <y>390</y>
-      <width>971</width>
-      <height>391</height>
+      <width>1001</width>
+      <height>401</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="phone">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>70</y>
+      <width>291</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="othercontact">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>100</y>
+      <width>311</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Condensed</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>20</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>913</x>
+      <y>10</y>
+      <width>20</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>240</y>
+      <width>1021</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget_2</zorder>
-   <zorder>line</zorder>
-   <zorder>line_2</zorder>
    <zorder>notes</zorder>
    <zorder>nextUser</zorder>
    <zorder>previousUser</zorder>
    <zorder>label</zorder>
-   <zorder>line_3</zorder>
    <zorder>line_4</zorder>
    <zorder>userId</zorder>
    <zorder>addNoteButton</zorder>
@@ -345,6 +372,11 @@
    <zorder>nextId</zorder>
    <zorder>previousId</zorder>
    <zorder>carsSection</zorder>
+   <zorder>phone</zorder>
+   <zorder>othercontact</zorder>
+   <zorder>line</zorder>
+   <zorder>line_2</zorder>
+   <zorder>line_3</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

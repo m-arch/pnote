@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = pnote
 TEMPLATE = app
 
+LIBS += -lhpdf -lm -lz
 
 SOURCES += main.cpp\
     initialize.cpp \
@@ -22,7 +23,11 @@ SOURCES += main.cpp\
     logic/dbsetup.cpp \
     logic/user.cpp \
     logic/usercar.cpp \
-    logic/utilities.cpp
+    logic/utilities.cpp \
+    logic/generatepdf.cpp \
+    logic/dbsearch.cpp \
+    GUIWindows/cartab.cpp \
+    GUIWindows/vinlookup.cpp
 
 HEADERS  += initialize.h \
     GUIWindows/mainwindow.h \
@@ -34,12 +39,18 @@ HEADERS  += initialize.h \
     logic/user.h \
     logic/usercar.h \
     logic/utilities.h \
-    extensions.h
+    extensions.h \
+    logic/generatepdf.h \
+    logic/dbsearch.h \
+    GUIWindows/cartab.h \
+    GUIWindows/vinlookup.h
 
 FORMS    += GUIWindows/mainwindow.ui \
     GUIWindows/menuwindow.ui \
     GUIWindows/notewindow.ui \
-    GUIWindows/userswindow.ui
+    GUIWindows/userswindow.ui \
+    GUIWindows/cartab.ui \
+    GUIWindows/vinlookup.ui
 
 OTHER_FILES +=
 

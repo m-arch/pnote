@@ -2,6 +2,7 @@
 #include "GUIWindows/menuwindow.h"
 #include "initialize.h"
 #include "logic/dbsetup.h"
+#include "logic/generatepdf.h"
 
 int main(int argc, char *argv[])
 {

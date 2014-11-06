@@ -28,17 +28,17 @@ void initialize::initializeUsersHash()
     QSqlQuery query;
     User tmpUser;
     QString previousId = "";
-    std::tr1::unordered_map<QString, userCar> userCarsHash;
+    std::tr1::unordered_map<int, userCar> userCarsHash;
     QString Id, firstName, lastName, phone, other, notes;
     query.exec("SELECT ID, First_Name, Last_Name, Contact_Number, Other_Contact, Notes FROM pnote.user;");
     while (query.next()){
         userCar tmpCar;
-        Id = query.value(0).toString();
-        firstName = query.value(1).toString();
-        lastName = query.value(2).toString();
-        phone = query.value(3).toString();
-        other = query.value(4).toString();
-        notes = query.value(5).toString();
+        Id = query.value(0).toString().trimmed();
+        firstName = query.value(1).toString().trimmed();
+        lastName = query.value(2).toString().trimmed();
+        phone = query.value(3).toString().trimmed();
+        other = query.value(4).toString().trimmed();
+        notes = query.value(5).toString().trimmed();
         userCarsHash =  tmpCar.makeUserCarsHash(Id);
         tmpUser.setUser(Id, previousId, firstName, lastName, phone, other, notes, userCarsHash);
         this->UsersHash.insert(std::make_pair(Id, tmpUser));
