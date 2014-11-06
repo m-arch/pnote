@@ -11,9 +11,9 @@ userCar::userCar()
 {
 }
 
-std::tr1::unordered_map<QString, userCar> userCar::makeUserCarsHash(QString userId)
+std::tr1::unordered_map<int, userCar> userCar::makeUserCarsHash(QString userId)
 {
-    std::tr1::unordered_map<QString, userCar> tmpHash;
+    std::tr1::unordered_map<int, userCar> tmpHash;
     QSqlQuery query;
     QString VIN, plateNumber, color, brand, model, motor;
     int id, year;

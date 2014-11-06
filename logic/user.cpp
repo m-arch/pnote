@@ -10,7 +10,7 @@ User::User()
 {
 }
 
-void User::setUser(QString Id, QString previousId, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes, std::tr1::unordered_map<QString, userCar> userCar)
+void User::setUser(QString Id, QString previousId, QString FirstName, QString LastName, QString phone, QString otherContact, QString notes, std::tr1::unordered_map<int, userCar> userCar)
 {
     this->id = Id;
     this->previousId = previousId;

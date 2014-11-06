@@ -91,9 +91,9 @@ void MenuWindow::on_previousUser_clicked()
     }
 }
 
-void setCarsFields(QWidget *carsWidget, unordered_map<QString, userCar> userCarsHash)
+void setCarsFields(QWidget *carsWidget, unordered_map<int, userCar> userCarsHash)
 {
-    unordered_map<QString, userCar>::iterator ucItr;
+    unordered_map<int, userCar>::iterator ucItr;
     QTabWidget *twid = new QTabWidget(carsWidget);
     twid->setGeometry(0, 0, carsWidget->width(), carsWidget->height());
     for ( ucItr = userCarsHash.begin(); ucItr != userCarsHash.end(); ucItr++)
@@ -110,11 +110,11 @@ void fillCarWidget(QWidget *widg, userCar car)
 
 }
 
-void fillCarsWidget(QWidget *carsWidget,unordered_map<QString, userCar> userCarsHash)
+void fillCarsWidget(QWidget *carsWidget,unordered_map<int, userCar> userCarsHash)
 {
     int wwidth = carsWidget->width();
     int nbrpline = (int)wwidth/191;
-    unordered_map<QString, userCar>::iterator ucItr;
+    unordered_map<int, userCar>::iterator ucItr;
     int counter = 0;
     for ( ucItr = userCarsHash.begin(); ucItr != userCarsHash.end(); ucItr++)
     {

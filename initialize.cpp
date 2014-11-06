@@ -28,7 +28,7 @@ void initialize::initializeUsersHash()
     QSqlQuery query;
     User tmpUser;
     QString previousId = "";
-    std::tr1::unordered_map<QString, userCar> userCarsHash;
+    std::tr1::unordered_map<int, userCar> userCarsHash;
     QString Id, firstName, lastName, phone, other, notes;
     query.exec("SELECT ID, First_Name, Last_Name, Contact_Number, Other_Contact, Notes FROM pnote.user;");
     while (query.next()){

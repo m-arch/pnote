@@ -18,7 +18,7 @@ public:
     void insertUserCar();
     QString brand, model, motor, color, plateNumber, VIN;
     int year;
-    std::tr1::unordered_map<QString, userCar> makeUserCarsHash(QString);
+    std::tr1::unordered_map<int, userCar> makeUserCarsHash(QString);
     QString userId;
     int id;
 

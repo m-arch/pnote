@@ -16,5 +16,5 @@ void getUserandCarFromVIN (QString VIN, User *user, userCar *car){
         carId = query.value(1).toInt();
     }
     *user = getUserbyId(userId);
-    *car = user->userCarsHash[QString::number(carId)];
+    *car = user->userCarsHash[carId];
 }

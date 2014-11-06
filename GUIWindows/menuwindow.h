@@ -39,6 +39,6 @@ private:
 
 void fillCarWidget(QWidget *, userCar);
 void drawCar(QWidget *, QPixmap, QString, QString, QString, int, int, int);
-void fillCarsWidget(QWidget *, unordered_map<QString, userCar>);
-void setCarsFields(QWidget *, unordered_map<QString, userCar>);
+void fillCarsWidget(QWidget *, unordered_map<int, userCar>);
+void setCarsFields(QWidget *, unordered_map<int, userCar>);
 #endif // MENUWINDOW_H
