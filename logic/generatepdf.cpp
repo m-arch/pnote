@@ -149,10 +149,10 @@ generatePdf::generatePdf(User *user, userCar *car)
     //disclaimer and signature
     HPDF_Page_SetFontAndSize (page, font, 10);
     add_text(page,0,"I,                                  by signing this paper admit and acknowledge that all vechicule tires were well tightened.", 0,775);
-    add_text(page,0,"Date:",0,800);
-    add_text(page,2,"Signature:",0,800);
+    add_text(page,0,"Date:",0,790);
+    add_text(page,2,"Signature:",0,790);
     //saving to file
-    HPDF_SaveToFile (pdf, "hello.pdf");
+    HPDF_SaveToFile (pdf, "test.pdf");
 
     //cleaning
     HPDF_Free (pdf);
